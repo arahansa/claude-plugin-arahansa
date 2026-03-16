@@ -1,0 +1,15 @@
+{
+  "name": "arahansa",
+  "version": 1,
+  "plugins": [
+    {
+      "name": "arahansa",
+      "description": "arahansa's Claude Code plugin collection - dev server management via tmux",
+      "version": "1.0.0",
+      "source": {
+        "type": "github",
+        "repo": "arahansa/claude-plugin-arahansa"
+      }
+    }
+  ]
+}

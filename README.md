@@ -8,6 +8,16 @@ arahansa's Claude Code plugin collection.
 claude plugin install arahansa --scope user
 ```
 
+Or install from marketplace:
+
+```bash
+# 마켓플레이스 등록
+claude plugin marketplace add https://raw.githubusercontent.com/arahansa/claude-plugin-arahansa/master/marketplace.json
+
+# 설치
+claude plugin install arahansa
+```
+
 Or test locally:
 
 ```bash
