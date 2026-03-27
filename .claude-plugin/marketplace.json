@@ -10,7 +10,7 @@
       "description": "arahansa's Claude Code plugin collection - dev server, cmux browser automation",
       "version": "1.1.0",
       "source": {
-        "source": "github",
+        "type": "github",
         "repo": "arahansa/claude-plugin-arahansa"
       }
     }
