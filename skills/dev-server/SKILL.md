@@ -1,11 +1,13 @@
 ---
 name: dev-server
-description: Use when you need to start, stop, restart, or check dev servers during development. Triggers on "서버 띄워", "dev 서버", "서버 재시작", "서버 로그", "run dev server", "start server", "restart server", or when implementation work requires a running dev server for verification.
+description: Use when you need to start, stop, restart, or check local dev servers during development. Triggers on "서버 띄워", "로컬 서버", "dev 서버", "서버 재시작", "서버 로그", "run dev server", "start server", "restart server", or when implementation work requires a running local dev server for verification. NOTE - this skill is for LOCAL dev servers only (localhost), not remote dev/staging/production servers.
 ---
 
-# Dev Server Management via tmux
+# 로컬 개발서버 관리 (Local Dev Server Management via tmux)
 
-tmux 세션을 사용하여 dev 서버를 백그라운드에서 관리한다.
+tmux 세션을 사용하여 로컬 개발서버(localhost)를 백그라운드에서 관리한다.
+
+> **주의**: 이 스킬은 로컬 개발서버(localhost) 전용이다. 원격 개발/스테이징/운영 서버와 혼동하지 않는다.
 
 ## Session Naming Convention
 
@@ -18,13 +20,13 @@ SESSION_NAME="$(basename "$(pwd)")"
 
 예: `/Users/me/code/my-blog` → 세션명 `my-blog`
 
-모노레포에서 여러 서버를 띄울 때는 `{폴더명}-backend`, `{폴더명}-frontend` 형식을 사용한다.
+모노레포에서 여러 로컬 개발서버를 띄울 때는 `{폴더명}-backend`, `{폴더명}-frontend` 형식을 사용한다.
 
 ## Commands
 
 ### Pre-check (항상 먼저 실행)
 
-서버를 시작하기 전에 해당 세션이 이미 있는지 확인한다:
+로컬 개발서버를 시작하기 전에 해당 세션이 이미 있는지 확인한다:
 
 ```bash
 SESSION_NAME="$(basename "$(pwd)")"
@@ -38,7 +40,7 @@ tmux has-session -t "$SESSION_NAME" 2>/dev/null && echo "running: $SESSION_NAME"
 tmux capture-pane -t "$SESSION_NAME" -p | tail -10
 ```
 
-- 정상이면 "이미 서버가 실행 중입니다"로 안내하고 끝낸다.
+- 정상이면 "이미 로컬 개발서버가 실행 중입니다"로 안내하고 끝낸다.
 - 에러가 있으면 해당 세션만 재시작한다.
 
 ### Start
@@ -128,7 +130,7 @@ tmux list-sessions -F '#{session_name}' 2>/dev/null | grep "^$SESSION_NAME" | xa
 
 ## Error Recovery
 
-서버가 비정상 종료되면 (포트 충돌 등):
+로컬 개발서버가 비정상 종료되면 (포트 충돌 등):
 
 ```bash
 # 포트 사용 중인 프로세스 확인
