@@ -1,6 +1,6 @@
 ---
 name: dev-server
-description: Use when you need to start, stop, restart, or check local dev servers during development. Triggers on "서버 띄워", "로컬 서버", "dev 서버", "서버 재시작", "서버 로그", "run dev server", "start server", "restart server", or when implementation work requires a running local dev server for verification. NOTE - this skill is for LOCAL dev servers only (localhost), not remote dev/staging/production servers.
+description: Use when you need to start, stop, restart, or check local dev servers during development. Triggers on "로컬 서버 띄워", "로컬 개발서버", "로컬 서버", "dev 서버", "로컬 서버 재시작", "서버 로그", "run dev server", "start server", "restart server", or when implementation work requires a running local dev server for verification. NOTE - this skill is for LOCAL dev servers only (localhost), not remote dev/staging/production servers. Do NOT trigger on generic "개발서버" or "서버 띄워" without "로컬" qualifier - those may refer to remote dev/staging servers.
 ---
 
 # 로컬 개발서버 관리 (Local Dev Server Management via tmux)

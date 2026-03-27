@@ -1,13 +1,16 @@
 {
   "name": "arahansa",
   "version": 1,
+  "owner": {
+    "name": "arahansa"
+  },
   "plugins": [
     {
       "name": "arahansa",
       "description": "arahansa's Claude Code plugin collection - dev server, cmux browser automation",
       "version": "1.1.0",
       "source": {
-        "type": "github",
+        "source": "github",
         "repo": "arahansa/claude-plugin-arahansa"
       }
     }
